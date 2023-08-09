@@ -164,15 +164,4 @@ public class User implements UserDetails {
         roles.remove(role);
         role.getUsers().remove(this);
     }
-
-    public void updateFields(User updatedUser) {
-        this.name = updatedUser.getName();
-        this.surname = updatedUser.getSurname();
-        this.age = updatedUser.getAge();
-        this.sex = updatedUser.getSex();
-
-        if (!updatedUser.getPassword().isEmpty()) {
-            this.password = updatedUser.getPassword();
-        }
-    }
 }

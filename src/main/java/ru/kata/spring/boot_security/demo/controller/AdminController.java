@@ -60,7 +60,6 @@ public class AdminController {
             return "redirect:/";
         }
 
-        user.updateFields(updateUser);
         userService.updateUser(user);
 
         return "redirect:/";
