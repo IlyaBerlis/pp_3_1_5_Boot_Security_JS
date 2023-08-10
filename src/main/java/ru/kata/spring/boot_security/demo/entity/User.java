@@ -159,7 +159,6 @@ public class User implements UserDetails {
         roles.add(role);
         role.getUsers().add(this);
     }
-
     public void removeRole(Role role){
         roles.remove(role);
         role.getUsers().remove(this);

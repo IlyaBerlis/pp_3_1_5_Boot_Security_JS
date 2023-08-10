@@ -21,8 +21,10 @@ public class SuccessUserHandler implements AuthenticationSuccessHandler {
         for (GrantedAuthority authority : authorities) {
             if (authority.getAuthority().equals("ROLE_ADMIN")) {
                 httpServletResponse.sendRedirect("/admin");
-            } else if (authority.getAuthority().equals("ROLE_USER")){
+                return; // Важно добавить return, чтобы прервать выполнение метода после перенаправления.
+            } else if (authority.getAuthority().equals("ROLE_USER")) {
                 httpServletResponse.sendRedirect("/user");
+                return; // Важно добавить return, чтобы прервать выполнение метода после перенаправления.
             }
         }
 
