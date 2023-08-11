@@ -63,11 +63,8 @@ public class AdminRestController {
             return ResponseEntity.notFound().build();
         }
 
-        user.setName(updateUser.getName());
-        user.setSurname(updateUser.getSurname());
-        // Set other fields as needed
-
         userService.updateUser(user);
+
         return ResponseEntity.ok(user);
     }
 
