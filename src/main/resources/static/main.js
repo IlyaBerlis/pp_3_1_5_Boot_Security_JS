@@ -31,23 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error fetching all users:", error);
         });
 
-    // Get user by ID
-    const userId = 1; // Change to the desired user ID
-    fetch(`/api/admin/users/${userId}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-        .then((response) => response.json())
-        .then((user) => {
-            // Handle user data
-            console.log("User by ID:", user);
-        })
-        .catch((error) => {
-            console.error("Error fetching user by ID:", error);
-        });
-
     // Get new user form data
     fetch("/api/admin/new", {
         method: "GET",
